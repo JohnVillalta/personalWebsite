@@ -1,0 +1,8 @@
+#wrapDiv {
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 20vw;
+  height: 100vh;
+  position: fixed;
+  top: 0vh;
+  right: 0vw;
+}

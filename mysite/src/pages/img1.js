@@ -1,9 +1,12 @@
 import React from 'react'
 import './img.css'
-import {ReactComponent as CloseOut} from './close_white_24dp.svg'
+import ImageNavBar from './imgbar'
+import CloseOut from './closeout'
+//import {useHistory  } from 'react-router-dom'
 
 const ImageTemplate = (props) => {
     var [toggle, settoggle] = React.useState(1) 
+    //let history = useHistory();
 
     function makeBlurry() {
         if(toggle == 0.5){
@@ -19,9 +22,9 @@ const ImageTemplate = (props) => {
 
     return (
         <div id= "back">
-            <CloseOut id="CloseOut"}/>
-            <img id= "photo" src= {props.add} onClick = {makeBlurry}/>
-            <h1>This is the description for Image 1</h1>
+            <CloseOut onClick={makeBlurry}/>
+            <img id= "photo" src= {props.add}/>
+            <ImageNavBar id="PicBar"/>
         </div>
     );
 };
