@@ -15,3 +15,10 @@
   margin-left: 5.5vw;
   margin-right: 5vw;
 }
+
+#photoDesc {
+  position: absolute;
+  top: 0;
+  left: 90vh;
+  margin-left: 7vw;
+}

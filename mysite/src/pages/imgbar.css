@@ -5,4 +5,14 @@
   position: fixed;
   top: 0vh;
   right: 0vw;
+  overflow-y: scroll;
+}
+
+.navImg {
+  display: inline;
+  position: relative;
+  float: center;
+  width: 15vw;
+  height: 10vw;
+  margin-left: 2.5vw;
 }

@@ -8,8 +8,8 @@ export const Nav = styled.nav`
     display: flex;
     justify-content: space-between;
     margin: 0;
-    padding: 0.2rem calc((100vw - 1000px) / 2);
-    z-index: 12;
+    padding: 0.4rem calc((100vw - 800px) / 2);
+    z-index: 2;
 `;
 
 //below is the properties for the links on the navbar
