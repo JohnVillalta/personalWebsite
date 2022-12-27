@@ -3,12 +3,12 @@ import { NavLink as Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Nav = styled.nav`
-    background: #c7ba8b;
+    background: #496e46;
     height: 85px;
     display: flex;
     justify-content: space-between;
     margin: 0;
-    padding: 0.2rem calc((100vw - 1000px) / 2);
+    padding: 0.2rem 31vw;
     z-index: 12;
 `;
 
@@ -23,7 +23,8 @@ export const NavLink = styled(Link)`
     height: 100%;
     cursor: pointer;
     &.active {
-        color: #8A6A35;
+        color: #c6e6b8;
+        text-shadow: 2px 2px 2px #b38e50;
     }
     &:hover {
       transition: all 0.2s ease-in-out;
@@ -38,40 +39,9 @@ export const NavMenu = styled.div`
   /* Second Nav */
   /* margin-right: 24px; */
   /* Third Nav */
-  /* width: 100vw;
-  white-space: nowrap; */
+  width: 100vw;
+  /* white-space: nowrap; */
   @media screen and (max-width: 768px) {
     display: none;
-  }
-`;
-  
-export const NavBtn = styled.nav`
-  display: flex;
-  align-items: center;
-  margin-right: 24px;
-  /* Third Nav */
-  /* justify-content: flex-end;
-  width: 100vw; */
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
-`;
-  
-export const NavBtnLink = styled(Link)`
-  border-radius: 4px;
-  background: #5F4A28;
-  padding: 10px 22px;
-  color: #FFF;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  text-decoration: none;
-  /* Second Nav */
-  margin-left: 24px;
-  &:hover {
-    transition: all 0.2s ease-in-out;
-    background: #fff;
-    color: #7F602E;
   }
 `;

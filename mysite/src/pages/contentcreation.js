@@ -1,6 +1,6 @@
 import React from 'react';
 import ImageTemplate from './img1'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import {NavLink as Link} from 'react-router-dom'
 import Image from '../components/image'
 import toad from '../components/Images/toadhat.jpg'
@@ -8,24 +8,14 @@ import zoro from '../components/Images/zoro.png'
 import { FaBorderNone } from 'react-icons/fa';
 
 const Content = () => {
-
-    var [toggle, settoggle] = React.useState(0.5)
-
     const divStyle = {
         textAlign: 'center', 
         width: '100%'
     };
 
     function makeBlurry() {
-        if(toggle == 0.5){
-            settoggle(1);
             document.getElementById("nav").style.filter = "blur(4px)";
             document.getElementById("mainContentPage").style.filter = "blur(4px)";
-        }else{
-            settoggle(0.5)
-            document.getElementById("nav").style.filter = "none";
-            document.getElementById("mainContentPage").style.filter = "none";
-        }
     }
 
     return (

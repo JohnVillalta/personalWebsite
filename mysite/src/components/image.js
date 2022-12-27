@@ -6,7 +6,6 @@ function Image(props) {
         <div style = {{display: 'inline-block', textAlign: 'center', width: '33vw'}}>
             <img src= {props.add} alt= 'image'/> 
             <p>{props.text}</p>
-
         </div>
     );
 };

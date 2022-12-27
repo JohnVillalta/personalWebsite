@@ -1,5 +1,5 @@
 import React from 'react'
-import './imgbar.css'
+import './allCss/imgbar.css'
 
 const ImageNavBar = () => {
     return (
