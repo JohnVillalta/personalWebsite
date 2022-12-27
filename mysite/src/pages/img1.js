@@ -8,7 +8,7 @@ const ImageTemplate = (props) => {
         <div id= "back">
             <CloseOut />
             <img id= "photo" src= {props.add}/>
-            <ImageNavBar id="PicBar"/>
+            <ImageNavBar id="PicBar" text={props.imgtext}/>
         </div>
     );
 };

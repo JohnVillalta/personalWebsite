@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect, createRef } from 'react';
 
-const Teams = () => {
+const Music = () => {
     return (
         <div style= {{
             display: 'flex',
@@ -14,4 +14,4 @@ const Teams = () => {
     );
 };
 
-export default Teams;
+export default Music;

@@ -9,7 +9,8 @@ const About = () => {
             height: '100vh'
         }}
         >
-            <h1>GeeksforGeeks if a Computer Science portal for geeks.</h1>
+            <h1>Hey there, my name's John Villalta! I'm an aspiring Full Stack Web Developer using React for the front end. I plan on using NodeJS for 
+                the backend in order to implement blog functionality. I also dabble with music, photography, and cars on the side!</h1>
         </div>
     );
 };

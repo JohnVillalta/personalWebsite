@@ -16,7 +16,7 @@ const Content = () => {
     function makeBlurry() {
             document.getElementById("nav").style.filter = "blur(4px)";
             document.getElementById("mainContentPage").style.filter = "blur(4px)";
-    }
+    };
 
     return (
         
@@ -28,13 +28,15 @@ const Content = () => {
             </div>
             
             <Routes>
-                <Route path='image1' element={<ImageTemplate add = {toad}/>} />
-                <Route path='image2' element={<ImageTemplate add = {zoro}/>}/>
-                <Route path='image3' element={<ImageTemplate />}/>
+                <Route path='image1' element={<ImageTemplate add = {toad} imgtext={img1text}/>} />
+                <Route path='image2' element={<ImageTemplate add = {zoro} imgtext={img2text}/>}/>
+                <Route path='image3' element={<ImageTemplate add = {toad} imgtext={img3text}/>}/>
             </Routes>
-           
         </div>
     );
 };
 
+const img1text = "This describes image 1"
+const img2text = "Wow image 2 is Zoro-dono"
+const img3text = "Much wow from image 3"
 export default Content;
