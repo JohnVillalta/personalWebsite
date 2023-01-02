@@ -11,17 +11,20 @@ import Blogs from './pages/blogs';
 
 function App() {
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path= '/' exact element= {<Home />} />
-        <Route path= '/home' element= {<Home2 />} />
-        <Route path= '/contentcreation/*' element= {<Content />} />
-        <Route path= '/programming' element= {<Programming />} />
-        <Route path= '/music' element= {<Music />} />
-        <Route path= '/blogs' element= {<Blogs />} />
-      </Routes>
-    </Router>
+    <div style={{height: '100vh', overflow: 'auto'}}>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path= '/' exact element= {<Home />} />
+          <Route path= '/home' element= {<Home2 />} />
+          <Route path= '/contentcreation/*' element= {<Content />} />
+          <Route path= '/programming' element= {<Programming />} />
+          <Route path= '/music' element= {<Music />} />
+          <Route path= '/blogs' element= {<Blogs />} />
+        </Routes>
+      </Router>
+    </div>
+    
   );
 }
 
