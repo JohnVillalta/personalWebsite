@@ -20,21 +20,21 @@ const ImageModal = (props) => {
     
     return (
         <div class="finalDiv">
-            <Dialog open={isOpen} onClose={() => {setIsOpen(false); goBack(); makeBlurry();}} id="back">
-                <Dialog.Panel>
-                    <CloseOut />
-                    <img id= "photo" src= {props.add} alt="usedImg"/>
-                    <div id="photoProps">
-                        <p>{props.text}</p>
-                        <button onClick={() => {setIsOpen(false); goBack(); makeBlurry();}} id="goBackButt">Go Back!</button>
-                    </div>
-                </Dialog.Panel>
-            </Dialog>
-            <Dialog open={isOpen} onClose={() => {setIsOpen(false); goBack(); makeBlurry();}}   >
-                <Dialog.Panel>
-                    <ImageNavBar id="PicBar"/>
-                </Dialog.Panel>
-            </Dialog>
+                <Dialog open={isOpen} onClose={() => {setIsOpen(false); goBack(); makeBlurry();}} id="back">
+                    <Dialog.Panel>
+                        <CloseOut />
+                        <img id= "photo" src= {props.add} alt="usedImg"/>
+                        <div id="photoProps">
+                            <p>{props.text}</p>
+                            <button onClick={() => {setIsOpen(false); goBack(); makeBlurry();}} id="goBackButt">Go Back!</button>
+                        </div>
+                    </Dialog.Panel>
+                </Dialog>
+                <Dialog open={isOpen} onClose={() => {setIsOpen(false); goBack(); makeBlurry();}}>
+                    <Dialog.Panel>
+                        <ImageNavBar id="PicBar"/>
+                    </Dialog.Panel>
+                </Dialog>
         </div>
     )
 };
