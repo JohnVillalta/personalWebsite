@@ -1,5 +1,5 @@
 import React from 'react'
-import './allCss/closeout.css'
+import './css/closeout.css'
 import {ReactComponent as X} from './close_white_24dp.svg'
 import { useNavigate } from 'react-router-dom';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom'
 import {NavLink as Link} from 'react-router-dom'
-import ImageModal from './imgModal'
+import ImageModal from '../components/ImgModal/imgModal'
 import Image from '../components/image'
 
 const Content = () => {
@@ -40,6 +40,8 @@ const Content = () => {
 
 const imgAdds = [require('../components/Images/cc1.png'), require('../components/Images/cc2.png'), require('../components/Images/cc3.png'), 
     require('../components/Images/cc4.png'), require('../components/Images/cc5.png'), require('../components/Images/cc6.png')]
+
+
 const imgDates = ['December 6th, 2021', 'January 9th, 2022', 'January 25th, 2022', 'February 3rd, 2022', 'February 23rd, 2022', 'Oct 6th, 2022']
 const img1text = "This describes image 1"
 const img2text = "Wow image 2 is Zoro-dono"

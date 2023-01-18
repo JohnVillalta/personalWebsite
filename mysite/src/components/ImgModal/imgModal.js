@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { useNavigate } from 'react-router-dom';
-import './allCss/imgModal.css'
+import './css/imgModal.css'
 import CloseOut from './closeout'
-import ImageNavBar from './imgbar'
+import ImageNavBar from '../../pages/imgbar'
 
 const ImageModal = (props) => {
     const navigate = useNavigate();
@@ -22,6 +22,8 @@ const ImageModal = (props) => {
         <div class="finalDiv">
                 <Dialog open={isOpen} onClose={() => {setIsOpen(false); goBack(); makeBlurry();}} id="back">
                     <Dialog.Panel>
+                        {/*This panel includes the closeout x, the selected photo, and its text*/}
+
                         <CloseOut />
                         <img id= "photo" src= {props.add} alt="usedImg"/>
                         <div id="photoProps">
@@ -32,6 +34,7 @@ const ImageModal = (props) => {
                 </Dialog>
                 <Dialog open={isOpen} onClose={() => {setIsOpen(false); goBack(); makeBlurry();}}>
                     <Dialog.Panel>
+                        {/*This panel includes the entire rightside navbar, scrollable and linkable to the next*/}
                         <ImageNavBar id="PicBar"/>
                     </Dialog.Panel>
                 </Dialog>
