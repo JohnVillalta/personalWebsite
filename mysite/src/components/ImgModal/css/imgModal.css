@@ -28,12 +28,12 @@
 }
 #photoProps {
   float: right;
-  margin: 5vh 1.5vw 5vh 0vw;
-  width: 25vw;
+  margin: 0vh 3vw 5vh 0vw;
+  width: 22.5vw;
   height: 70vh;
-}
-#photoProps p{
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 #goBackButt {
@@ -56,4 +56,8 @@
   top: 0;
   background: none;
   height: 70vh;
+}
+
+#pDesc {
+  font-size: 130%;
 }

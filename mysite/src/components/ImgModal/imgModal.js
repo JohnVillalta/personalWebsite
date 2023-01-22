@@ -27,7 +27,8 @@ const ImageModal = (props) => {
                         <CloseOut />
                         <img id= "photo" src= {props.add} alt="usedImg"/>
                         <div id="photoProps">
-                            <p>{props.text}</p>
+                            <p id="pDesc">{props.text}</p>
+                            <p id="pDate">{props.date}</p>
                             <button onClick={() => {setIsOpen(false); goBack(); makeBlurry();}} id="goBackButt">Go Back!</button>
                         </div>
                     </Dialog.Panel>
