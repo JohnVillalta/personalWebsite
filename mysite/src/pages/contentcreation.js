@@ -55,7 +55,5 @@ const imgDesc = [ "This originally was a small photo session I had in my own roo
         "This was probably one of the scariest moments of my life. The sun had went down while I was retracing my steps to find my way back to the car. With no " +
         "phone service and water left, I was in a frenzy of thoughts until I eventually found the returning route 2 hours after sundown. What an experience."]
 const imgDates = ['December 6th, 2021', 'January 9th, 2022', 'January 25th, 2022', 'February 3rd, 2022', 'February 23rd, 2022', 'Oct 6th, 2022']
-const img1text = "This describes image 1"
-const img2text = "Wow image 2 is Zoro-dono"
-const img3text = "Much wow from image 3"
+
 export default Content;
