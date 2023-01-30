@@ -1,45 +1,45 @@
-import React, { useState } from 'react'
-import { Dialog } from '@headlessui/react'
-import { useNavigate } from 'react-router-dom';
+import React, { Fragment } from 'react'
+import { Transition, Dialog } from '@headlessui/react'
 import './css/imgModal.css'
-import CloseOut from './closeout'
-import ImageNavBar from '../../pages/imgbar'
 
-const ImageModal = (props) => {
-    const navigate = useNavigate();
-    let [isOpen, setIsOpen] = useState(true)
-
-    function goBack() {
-        navigate("../", {replace: true});
-    }
+const ImageModal = ({add, text, date, which, isShowing, setIsShowing}) => {
+    const transitionVar = {
+        enter:" transition duration-250 sm:duration-450 ease-out",
+        enterFrom:"transform scale-95 opacity-0",
+        enterTo:"transform scale-100 opacity-100",
+        leave:"transition duration-250 sm:duration-450 ease-out",
+        leaveFrom:"transform scale-100 opacity-100",
+        leaveTo:"transform scale-95 opacity-0",
+    };
 
     function makeBlurry() {
         document.getElementById("nav").style.filter = "none";
         document.getElementById("mainContentPage").style.filter = "none";
     }
     
-    return (
-        <div class="finalDiv">
-                <Dialog open={isOpen} onClose={() => {setIsOpen(false); goBack(); makeBlurry();}} id="back">
-                    <Dialog.Panel>
-                        {/*This panel includes the closeout x, the selected photo, and its text*/}
+    function closeModal() {
+        makeBlurry();
+        setIsShowing(false);
+    }
 
-                        <CloseOut />
-                        <img id= "photo" src= {props.add} alt="usedImg"/>
-                        <div id="photoProps">
-                            <p id="pDesc">{props.text}</p>
-                            <p id="pDate">{props.date}</p>
-                            <button onClick={() => {setIsOpen(false); goBack(); makeBlurry();}} id="goBackButt">Go Back!</button>
-                        </div>
-                    </Dialog.Panel>
+    return (
+        <Transition show={isShowing} as={Fragment}>
+            <div className="fixed top-0 bg-black/10 h-[100%] w-[100%]">
+                <Dialog className="fixed top-0 w-full h-full" as="div" onClose={closeModal} id="back">
+                    <Transition.Child as={Fragment} {...transitionVar}>
+                        <Dialog.Panel>
+                            {/*This panel includes the closeout x, the selected photo, and its text*/}
+                            <img id= "photo" src={add[which]} alt="usedImg"/>
+                            <div id="photoProps">
+                                <p id="pDesc">{text[which]}</p>
+                                <p id="pDate">{date[which]}</p>
+                                <button onClick={closeModal} id="goBackButt">Go Back!</button>
+                            </div>
+                        </Dialog.Panel>
+                    </Transition.Child>
                 </Dialog>
-                <Dialog open={isOpen} onClose={() => {setIsOpen(false); goBack(); makeBlurry();}}>
-                    <Dialog.Panel>
-                        {/*This panel includes the entire rightside navbar, scrollable and linkable to the next*/}
-                        <ImageNavBar id="PicBar"/>
-                    </Dialog.Panel>
-                </Dialog>
-        </div>
+            </div>
+        </Transition>
     )
 };
 

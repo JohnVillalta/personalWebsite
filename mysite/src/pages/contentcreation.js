@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import { Routes, Route } from 'react-router-dom'
 import {NavLink as Link} from 'react-router-dom'
+import { Dialog, Transition } from '@headlessui/react';
 import ImageModal from '../components/ImgModal/imgModal'
+import CloseOut from '../components/ImgModal/closeout'
 import Image from '../components/image'
+import ImageNavBar from './imgbar'
 
 const Content = () => {
     const divStyle = {
@@ -11,31 +14,34 @@ const Content = () => {
     };
 
     const [isShowing, setIsShowing] = useState(false);
+    const [whichImg, setWhichImg] = useState(0);
 
     function makeBlurry() {
             document.getElementById("nav").style.filter = "blur(4px)";
             document.getElementById("mainContentPage").style.filter = "blur(4px)";
     };
 
+    function openModal() {
+        setIsShowing(true);
+    };
+
+    function closeModal() {
+        setIsShowing(false);
+    }
+
     return (
-        <div style={{display: 'block', height: '1150px', overflow: 'auto'}}>
-            <div id="mainContentPage" style= {{divStyle}} onClick = {makeBlurry}>
-                <Link to='image1' activeStyle><Image add = {imgAdds[0]} text= {imgDates[0]}/></Link>
-                <Link to='image2' activeStyle><Image add = {imgAdds[1]} text= {imgDates[1]}/></Link>
-                <Link to='image3' activeStyle><Image add = {imgAdds[2]} text= {imgDates[2]}/></Link>
-                <Link to='image4' activeStyle><Image add = {imgAdds[3]} text= {imgDates[3]}/></Link>
-                <Link to='image5' activeStyle><Image add = {imgAdds[4]} text= {imgDates[4]}/></Link>
-                <Link to='image6' activeStyle><Image add = {imgAdds[5]} text= {imgDates[5]}/></Link>
+        <div className="max-w-full mx-auto flex items-center justify-center">
+            <div id="mainContentPage" className="text-center w-[95%] grid grid-cols-3 items-center justify-center gap-x-[50px] gap-y-[10px] mt-[25px]" onClick={makeBlurry}>
+                {[...Array(6)].map((el, i) => (
+                    <div onClick={() => {openModal(); setWhichImg(i)}}>
+                        <Image add={imgAdds[i]} text={imgDates[i]}/>
+                    </div>
+                ))}
             </div>
-            
-            <Routes>
-                <Route path='image1' element={<ImageModal add = {imgAdds[0]} text={imgDesc[0]} date={imgDates[0]}/>}/>
-                <Route path='image2' element={<ImageModal add = {imgAdds[1]} text={imgDesc[1]} date={imgDates[1]}/>}/>
-                <Route path='image3' element={<ImageModal add = {imgAdds[2]} text={imgDesc[2]} date={imgDates[2]}/>}/>
-                <Route path='image4' element={<ImageModal add = {imgAdds[3]} text={imgDesc[3]} date={imgDates[3]}/>}/>
-                <Route path='image5' element={<ImageModal add = {imgAdds[4]} text={imgDesc[4]} date={imgDates[4]}/>}/>
-                <Route path='image6' element={<ImageModal add = {imgAdds[5]} text={imgDesc[5]} date={imgDates[5]}/>}/>
-            </Routes>
+
+                <CloseOut isShowing={isShowing} setIsShowing={setIsShowing}/> 
+                <ImageModal add={imgAdds} text={imgDesc} date={imgDates} which={whichImg} isShowing={isShowing} setIsShowing={setIsShowing}/>
+                <ImageNavBar isShowing={isShowing} setIsShowing={setIsShowing} id="PicBar" imgAdds={imgAdds} which={whichImg}/>
         </div>
     );
 };
@@ -56,6 +62,7 @@ const imgDesc = [ "This originally was a small photo session I had in my own roo
         " at the perfect angle.", "This photo marks a very specific occasion to me. It was the time where I got lost on the way back from a one way trailhead. " +
         "This was probably one of the scariest moments of my life. The sun had went down while I was retracing my steps to find my way back to the car. With no " +
         "phone service and water left, I was in a frenzy of thoughts until I eventually found the returning route 2 hours after sundown. What an experience."]
+
 const imgDates = ['December 6th, 2021', 'January 9th, 2022', 'January 25th, 2022', 'February 3rd, 2022', 'February 23rd, 2022', 'Oct 6th, 2022']
-const change = 'change'
+
 export default Content;
