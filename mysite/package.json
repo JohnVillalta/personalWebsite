@@ -44,5 +44,6 @@
   },
   "devDependencies": {
     "tailwindcss": "^3.2.4"
-  }
+  },
+  "homepage": "http://johnvillalta.github.io/personalWebsite.github.io/"
 }
