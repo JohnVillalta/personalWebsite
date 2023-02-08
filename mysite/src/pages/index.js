@@ -2,15 +2,19 @@ import React from 'react';
 
 const Home = () => {
     return (
-        <div style= {{
-            display: 'flex',
-            justifyContent: 'Right',
-            alignItems: 'Right',
-            height: '100vh'
-        }}
-        >
-            <h1>Hey there, my name's John Villalta! I'm an aspiring Full Stack Web Developer using React for the front end. I plan on using NodeJS for 
-                the backend in order to implement blog functionality. I also dabble with music, photography, and cars on the side!</h1>
+        <div className="border-2 border-[#496e46] m-2 p-2 h-100 flex-col">
+            <div className="flex-col justify-start">
+                <h1>John Villalta</h1>
+                <p>Aspiring Full Stack Developer</p>
+                <p>Lightweight Photographer</p>
+                <p>Music Hobbyist</p>
+                <p>Fitness Nut</p>
+            </div>
+            <img src="../components/Images/profPic.png"></img>
+            <div className="flex justify-end">
+                <p className="w-60">There is too much demand for perfection and a lack of explicitness when seeking a career in tech. Why not spice up life with
+                     other interest? Check out mine!</p>
+            </div>
         </div>
     );
 };
