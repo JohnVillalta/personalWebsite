@@ -3,14 +3,9 @@ import {ReactComponent as X} from './close_white_24dp.svg'
 import { useNavigate } from 'react-router-dom';
 import { Dialog } from '@headlessui/react'
 
-const CloseOut = ({ isShowing, setIsShowing }) => {
-    function makeBlurry() {
-        document.getElementById("nav").style.filter = "none";
-        document.getElementById("mainContentPage").style.filter = "none";
-    }
-
+const CloseOut = ({ isShowing, setIsShowing, propRef }) => {
     function closeModal() {
-        makeBlurry();
+        propRef.current.classList.remove("blurryBoi")
         setIsShowing(false);
     }
 

@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import { Transition, Dialog } from '@headlessui/react'
 import './css/imgModal.css'
 
-const ImageModal = ({add, text, date, which, isShowing, setIsShowing}) => {
+const ImageModal = ({add, text, date, which, isShowing, setIsShowing, propRef}) => {
     const transitionVar = {
         enter:" transition duration-250 sm:duration-450 ease-out",
         enterFrom:"transform scale-95 opacity-0",
@@ -11,14 +11,9 @@ const ImageModal = ({add, text, date, which, isShowing, setIsShowing}) => {
         leaveFrom:"transform scale-100 opacity-100",
         leaveTo:"transform scale-95 opacity-0",
     };
-
-    function makeBlurry() {
-        document.getElementById("nav").style.filter = "none";
-        document.getElementById("mainContentPage").style.filter = "none";
-    }
     
-    function closeModal() {
-        makeBlurry();
+    function closeModal() { 
+        propRef.current.classList.remove("blurryBoi")
         setIsShowing(false);
     }
 

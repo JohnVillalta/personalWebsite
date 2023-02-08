@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import './App.css';
 import Navbar from './components/NavBar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -10,14 +10,16 @@ import Music from './pages/music';
 import Blogs from './pages/blogs';
 
 function App() {
+  const blurRef = useRef(null);
+
   return (
-    <div style={{height: '100vh', overflow: 'auto'}}>
+    <div ref={blurRef} className="h-[100vh] overflow-auto">
       <Router>
         <Navbar />
         <Routes>
           <Route path= '/' exact element= {<Home />} />
           <Route path= '/home' element= {<Home2 />} />
-          <Route path= '/contentcreation/*' element= {<Content />} />
+          <Route path= '/contentcreation/*' element= {<Content propRef={blurRef}/>} /> 
           <Route path= '/programming' element= {<Programming />} />
           <Route path= '/music' element= {<Music />} />
           <Route path= '/blogs' element= {<Blogs />} />

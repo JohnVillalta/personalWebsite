@@ -13,3 +13,9 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
+
+.blurryBoi {
+  filter: blur(4px)
+}
+
+

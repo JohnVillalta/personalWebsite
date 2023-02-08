@@ -7,41 +7,30 @@ import CloseOut from '../components/ImgModal/closeout'
 import Image from '../components/image'
 import ImageNavBar from './imgbar'
 
-const Content = () => {
-    const divStyle = {
-        textAlign: 'center', 
-        width: '100%'
-    };
-
+const Content = ({propRef}) => {
     const [isShowing, setIsShowing] = useState(false);
     const [whichImg, setWhichImg] = useState(0);
 
-    function makeBlurry() {
-            document.getElementById("nav").style.filter = "blur(4px)";
-            document.getElementById("mainContentPage").style.filter = "blur(4px)";
-    };
-
     function openModal() {
+        propRef.current.classList.add("blurryBoi")
         setIsShowing(true);
     };
 
-    function closeModal() {
-        setIsShowing(false);
-    }
-
     return (
         <div className="max-w-full mx-auto flex items-center justify-center">
-            <div id="mainContentPage" className="text-center w-[95%] grid grid-cols-3 items-center justify-center gap-x-[50px] gap-y-[10px] mt-[25px]" onClick={makeBlurry}>
+            <div id="mainContentPage" className="text-center w-[95%] grid grid-cols-3 items-center justify-center gap-x-[50px] gap-y-[10px] mt-[25px]">
                 {[...Array(6)].map((el, i) => (
                     <div onClick={() => {openModal(); setWhichImg(i)}}>
                         <Image add={imgAdds[i]} text={imgDates[i]}/>
+                        
                     </div>
                 ))}
+                <p></p>
             </div>
 
-                <CloseOut isShowing={isShowing} setIsShowing={setIsShowing}/> 
-                <ImageModal add={imgAdds} text={imgDesc} date={imgDates} which={whichImg} isShowing={isShowing} setIsShowing={setIsShowing}/>
-                <ImageNavBar isShowing={isShowing} setIsShowing={setIsShowing} id="PicBar" imgAdds={imgAdds} which={whichImg}/>
+            <CloseOut isShowing={isShowing} setIsShowing={setIsShowing} propRef={propRef}/> 
+            <ImageModal add={imgAdds} text={imgDesc} date={imgDates} which={whichImg} isShowing={isShowing} setIsShowing={setIsShowing} propRef={propRef}/>
+            <ImageNavBar isShowing={isShowing} setIsShowing={setIsShowing} id="PicBar" imgAdds={imgAdds} setWhichImg={setWhichImg}/>
         </div>
     );
 };
