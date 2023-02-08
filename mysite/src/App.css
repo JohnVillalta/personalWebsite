@@ -1,10 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 ::-webkit-scrollbar {
   display: none;
 }
+
 body,
 html {
   font-family: Montserrat, sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
+
+.blurryBoi {
+  filter: blur(4px)
+}
+
+
