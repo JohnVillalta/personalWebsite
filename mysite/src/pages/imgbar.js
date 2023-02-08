@@ -1,11 +1,8 @@
 import React, { Fragment } from 'react'
-import { NavLink as Link, Routes, Route } from 'react-router-dom'
 import { Scrollbars } from 'react-custom-scrollbars'
 import { Dialog, Transition } from '@headlessui/react'
 
 const ImageNavBar = ({ isShowing, setIsShowing, imgAdds, setWhichImg }) => {
-    var imageDesc = ["This is description 1", "This is description 2", "This is description 3"]
-
     const transitionVar = {
         enter: 'transform transition ease-in-out duration-400 sm:duration-500',
         enterFrom: 'translate-x-full',
@@ -36,6 +33,4 @@ const ImageNavBar = ({ isShowing, setIsShowing, imgAdds, setWhichImg }) => {
     );
 };
 
-const imgAdds = [require('../components/Images/cc1.png'), require('../components/Images/cc2.png'), require('../components/Images/cc3.png'), 
-    require('../components/Images/cc4.png'), require('../components/Images/cc5.png'), require('../components/Images/cc6.png')]
 export default ImageNavBar;

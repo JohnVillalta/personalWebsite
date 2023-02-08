@@ -1,5 +1,5 @@
 import React from 'react'
-import './img.css'
+import './allCss/img.css'
 import ImageNavBar from './imgbar'
 import CloseOut from './closeout'
 //import {useHistory  } from 'react-router-dom'
