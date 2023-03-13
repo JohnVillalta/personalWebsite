@@ -14,8 +14,8 @@ const Navbar = () => {
     };
 
     return (
-        <div className="">
-            <nav className="h-[85px] flex justify-between m-0 py-[1rem] px-[31vw]">
+        <div className=" bg-white fixed">
+            <nav className="h-[9vh] flex justify-between m-0 py-[1rem] px-[31vw]">
                 <div className="flex align-middle mr-[-24px] w-[100vw] space-x-2">
                     <NavLink className={LinkStyle.style} to= '/' style={({ isActive }) => isActive ? activeStyle : undefined }>
                         HOME
