@@ -1,21 +1,32 @@
 import React from 'react';
+import TypeWriterEffect from 'react-typewriter-effect'
 
 const Home = () => {
     return (
-        <div className="border-2 border-[#496e46] m-2 p-2 flex">
-            <div className="flex-auto flex-col justify-start">
-                <h1 class="stripe_inner">John Villalta</h1>
-                <p>Aspiring Full Stack Developer</p>
-                <p>Lightweight Photographer</p>
-                <p>Music Hobbyist</p>
-                <p>Fitness Nut</p>
-            </div>
-            <img className="flex-1 rounded-full w-[40%] my-8"src={require('../components/Images/profPic.png')}/>
-            <div className="flex-auto">
-                <div className="flex items-end">
-                    <p className="w-60 text-justify bg-slate-500 ">There is too much demand for perfection and a lack of explicitness when seeking a career in tech. Why not spice up life with
-                        other interest? Check out mine!</p>
+        <div className=" m-2 p-2">
+            <div className="flex-col justify-start">
+                <img className="rounded-full w-[25%] my-8 mx-auto drop-shadow-[5px_5px_5px_rgba(0,0,0,0.4)]" src={require('../components/Images/profPic.png')}/>
+                <h1 className="w-[100%] text-center text-[150%]">John Villalta</h1>
+                <div className="mt-[10px]">
+                    <TypeWriterEffect 
+                        textStyle={{
+                            color: '#000000',
+                            textAlign: 'center'
+                        }}
+                        multiText={[
+                            'Aspiring FullStack Developer',
+                            'Lightweight Photographer',
+                            'Music Hobbyist',
+                            'Fitness Nut'
+                        ]}
+                        multiTextDelay={1000}
+                        multiTextLoop='true'
+                    />
                 </div>
+            </div>  
+            <div className="w-[50%] mx-auto drop-shadow-md bg-[#f7f5f0]">
+                <p className="w-[90%] text-[120%] text-center mx-auto py-[2vh] mt-[5vh]">There is too much demand for perfection and a lack of explicitness when seeking a career in tech.
+                    Why not spice up life with other interests? Check out mine!</p>
             </div>
         </div>
     );
