@@ -11,6 +11,7 @@ import link from '../components/Images/link.jpg'
 import joaquin from '../components/Images/joaquin.jpg'
 import cut from '../components/Images/cut.jpg'
 import { FaBorderNone } from 'react-icons/fa';
+import { Scrollbars } from "react-custom-scrollbars"
 
 const Content = () => {
 
@@ -19,7 +20,7 @@ const Content = () => {
 
     const divStyle = {
         textAlign: 'center', 
-        width: '100%'
+        width: '100%',
     };
 
     function makeBlurry() {
@@ -27,16 +28,17 @@ const Content = () => {
             settoggle(1);
             document.getElementById("nav").style.filter = "blur(4px)";
             document.getElementById("mainContentPage").style.filter = "blur(4px)";
+            document.getElementById("mainContentPage").style.overflow = "clip";
         }else{
             settoggle(0.5)
             document.getElementById("nav").style.filter = "none";
             document.getElementById("mainContentPage").style.filter = "none";
+            document.getElementById("mainContentPage").style.overflow = "scroll";
         }
     }
 
     return (
-        
-        <div>
+        <div>  
             <div id="mainContentPage" style= {{divStyle}} onClick = {makeBlurry}>
                 <Link to='image1' activeStyle><Image add = {toad} text= 'This is image 1'/></Link>
                 <Link to='image2' activeStyle><Image add = {zoro} text= 'This is image 2'/></Link>
@@ -56,7 +58,6 @@ const Content = () => {
                 <Route path='image6' element={<ImageTemplate add = {joaquin} desc = {imageDesc[5]}/>}/>
                 <Route path='image7' element={<ImageTemplate add = {cut} desc = {imageDesc[6]}/>}/>
             </Routes>
-           
         </div>
     );
 };

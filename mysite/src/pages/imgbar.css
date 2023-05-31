@@ -6,6 +6,12 @@
   top: 0vh;
   right: 0vw;
   overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+#wrapDiv::-webkit-scrollbar {
+  display: none;
 }
 
 .navImg {

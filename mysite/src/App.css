@@ -10,4 +10,5 @@ html {
   font-family: Montserrat, sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  overflow: auto;
 }

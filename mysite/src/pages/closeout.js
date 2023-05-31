@@ -3,7 +3,7 @@ import './closeout.css'
 import {ReactComponent as X} from './close_white_24dp.svg'
 import { useNavigate } from 'react-router-dom';
 
-const CloseOut = ({ match, destination }) => {
+const CloseOut = () => {
     var [toggle, settoggle] = React.useState(1)
 
     function makeBlurry() {

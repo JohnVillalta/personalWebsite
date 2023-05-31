@@ -1,0 +1,25 @@
+#main {
+  height: 100vh;
+  display: flex;
+}
+#imageDiv {
+  flex: 1;
+  margin-left: 5vw;
+  margin-top: 0.5vw;
+}
+
+#imageDiv img {
+  height: 40vw;
+  width: 40vw;
+  border-radius: 50%;
+}
+
+#headerDiv {
+  flex: 1;
+}
+
+#headerDiv h1 {
+  padding-top: auto;
+  margin-right: 3vw;
+  line-height: 2;
+}
