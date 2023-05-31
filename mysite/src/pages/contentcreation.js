@@ -1,7 +1,4 @@
-import React, { Fragment, useState } from 'react';
-import { Routes, Route } from 'react-router-dom'
-import {NavLink as Link} from 'react-router-dom'
-import { Dialog, Transition } from '@headlessui/react';
+import React, { useState } from 'react';
 import ImageModal from '../components/ImgModal/imgModal'
 import CloseOut from '../components/ImgModal/closeout'
 import Image from '../components/image'
@@ -25,7 +22,6 @@ const Content = ({propRef}) => {
                         
                     </div>
                 ))}
-                <p></p>
             </div>
 
             <CloseOut isShowing={isShowing} setIsShowing={setIsShowing} propRef={propRef}/> 

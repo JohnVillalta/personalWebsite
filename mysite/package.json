@@ -3,13 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-<<<<<<< HEAD
-    "@headlessui/react": "^1.7.14",
-=======
     "@headlessui/react": "^1.7.7",
-    "@react-spring/parallax": "^9.6.1",
+    "@react-spring/parallax": "^9.7.2",
     "@react-spring/web": "^9.6.1",
->>>>>>> 0394990c3374365f677f07dee11a0daf6c8f47e7
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
@@ -53,5 +49,5 @@
     "gh-pages": "^5.0.0",
     "tailwindcss": "^3.2.4"
   },
-  "homepage": "http://johnvillalta.github.io/personalWebsite/"
+  "homepage": "http://johnvillalta.github.io/"
 }
