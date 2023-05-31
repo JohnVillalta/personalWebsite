@@ -1,8 +1,11 @@
 import React from 'react'
-import './img.css'
+import './allCss/img.css'
 import ImageNavBar from './imgbar'
 import CloseOut from './closeout'
+<<<<<<< HEAD
 //import { useHistory  } from 'react-router-dom'
+=======
+>>>>>>> d18ff57b98ba099aa56f40ca54337a25dd31b43d
 
 const ImageTemplate = (props) => {
      

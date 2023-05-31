@@ -1,8 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-.App {
-  text-align: center;
-  color: blue;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+::-webkit-scrollbar {
+  display: none;
 }
 
 body,
@@ -12,3 +14,9 @@ html {
   -webkit-font-smoothing: antialiased;
   overflow: auto;
 }
+
+.blurryBoi {
+  filter: blur(4px)
+}
+
+
